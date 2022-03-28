@@ -1,1 +1,41 @@
-[]
+[
+    {
+        "tweet_id": "3fa85f64-5717-4562-b3fc-2c963f66afa9",
+        "content": "string",
+        "created_at": "2022-03-27 22:20:41.745696",
+        "updated_at": "2022-03-28 03:20:55.126000+00:00",
+        "by": {
+            "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa8",
+            "email": "freddy@example.com",
+            "first_name": "Freddy",
+            "last_name": "Santan\u00e1",
+            "birth_date": "2022-03-01"
+        }
+    },
+    {
+        "tweet_id": "3fa85f64-5717-4564-b3fc-2c963f66afa9",
+        "content": "string",
+        "created_at": "2022-03-27 22:20:41.745696",
+        "updated_at": "2022-03-28 03:20:55.126000+00:00",
+        "by": {
+            "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa8",
+            "email": "eduardo@example.com",
+            "first_name": "Freddy",
+            "last_name": "Santan\u00e1 Lopez",
+            "birth_date": "2022-03-11"
+        }
+    },
+    {
+        "tweet_id": "3fa85f64-5767-4564-b3fc-2c963f66afa9",
+        "content": "string",
+        "created_at": "2022-03-27 22:20:41.745696",
+        "updated_at": "2022-03-28 03:20:55.126000+00:00",
+        "by": {
+            "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa8",
+            "email": "eduardo@example.com",
+            "first_name": "Edgar",
+            "last_name": "Salas Loarte",
+            "birth_date": "2022-03-16"
+        }
+    }
+]
