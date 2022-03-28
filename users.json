@@ -1,1 +1,18 @@
-[]
+[
+    {
+        "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "email": "s.freddy131@gmail.com",
+        "first_name": "Freddy",
+        "last_name": "Santana",
+        "birth_date": "2022-03-28",
+        "password": "zoembiE3"
+    },
+    {
+        "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa7",
+        "email": "santanafreddy306@gmail.com",
+        "first_name": "Eduardo",
+        "last_name": "Salas",
+        "birth_date": "2022-03-12",
+        "password": "991801ju"
+    }
+]
