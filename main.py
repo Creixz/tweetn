@@ -10,8 +10,8 @@ from pydantic import BaseModel, EmailStr
 from pydantic import Field
 
 # FastAPI
-from fastapi import FastAPI, status
-from fastapi import Body
+from fastapi import FastAPI, status, HTTPException
+from fastapi import Body, Path
 
 app = FastAPI()
 
@@ -109,7 +109,6 @@ def signup(user: UserRegister = Body(...)):
         f.write(json.dumps(results))
         return user
 
-
 ### Login a user
 @app.post(
     path="/login",
@@ -156,8 +155,38 @@ def show_all_users():
     summary="Show a User",
     tags = ["Users"]
 )
-def show_a_user():
-    pass
+def show_a_user(user_id: UUID = Path(
+    ...,
+    title="User ID",
+    description="This is the user ID",
+    example="3fa85f64-5717-4562-b3fc-2c963f66afa2"
+    )):
+    """
+    Show a User
+
+    This path operation show if a person exist in the app
+
+    Parameters:
+        - user_id: UUID
+
+    Returns a json with user data:
+        - user_id: UUID
+        - email: Emailstr
+        - first_name: str
+        - last_name: str
+        - birth_date: datetime
+    """
+    with open("users.json", "r+", encoding="utf-8") as f: 
+        results = json.loads(f.read())
+        id = str(user_id)
+    for data in results:
+        if data["user_id"] == id:
+            return data
+    else:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"¡This user_id doesn't exist!"
+        )
 
 ### Delete a user
 @app.delete(
@@ -192,7 +221,23 @@ def update_a_user():
     tags = ["Tweets"]
 )
 def home():
-    return {"Twitter API": "Working!"}
+    """
+    Get Tweets
+
+    This path operation shows all tweets created in the app
+
+    Parameters: None
+
+    Returns a list with the all tweets created in the app:
+    - tweet_id: UUID
+    - content: str
+    - created_at: datetime
+    - updated_at: Optional[datetime]
+    - by: User
+    """
+    with open("tweets.json", "r", encoding="utf_8") as f:
+        results = json.loads(f.read())
+        return results
 
 ### Post a tweet
 @app.post(
